@@ -8,6 +8,7 @@ export default function LessonPage() {
         <Button className='mt-6'>Back</Button>
       </Link>
       <h1 className='text-3xl font-bold'>This is your lesson</h1>
+      <Button>ll</Button>
     </div>
   )
 }

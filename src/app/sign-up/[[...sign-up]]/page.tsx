@@ -2,7 +2,7 @@ import { SignUp } from "@clerk/nextjs"
 
 const SignUpPage = () => {
   return (
-    <section className='flex place-content-center shrink'>
+    <section className='flex items-center mx-auto'>
       <SignUp/>
     </section> 
   )

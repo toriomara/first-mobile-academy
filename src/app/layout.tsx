@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
+import { dark } from '@clerk/themes'
 import { Header } from './components/Header'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Footer } from './components/Footer'
@@ -13,13 +14,24 @@ export const metadata: Metadata = {
   description: 'Lesson ',
 }
 
+// Не могу получить объект window, так как на сервере он недоступен
+// const userTheme = () => {
+//   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+//     return dark
+//   }
+// }
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider 
+      appearance={{
+        baseTheme: dark
+      }}
+    >
       <html lang="en">
         <body className={inter.className}>
           <ThemeProvider
