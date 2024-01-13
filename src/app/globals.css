@@ -73,3 +73,7 @@ main {
     @apply bg-background text-foreground;
   }
 }
+
+.xWrapper {
+  @apply px-6 sm:px-8 md:px-12 lg:px-24 2xl:px-0
+}

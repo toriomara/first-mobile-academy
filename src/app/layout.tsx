@@ -14,13 +14,6 @@ export const metadata: Metadata = {
   description: 'Lesson ',
 }
 
-// Не могу получить объект window, так как на сервере он недоступен
-// const userTheme = () => {
-//   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-//     return dark
-//   }
-// }
-
 export default function RootLayout({
   children,
 }: {
@@ -32,16 +25,16 @@ export default function RootLayout({
         baseTheme: dark
       }}
     >
-      <html lang="en">
+      <html lang='en'>
         <body className={inter.className}>
           <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
+            attribute='class'
+            defaultTheme='system'
             enableSystem
             disableTransitionOnChange
           >
-              <Header/>
-              <main className='container flex'>{children}</main>
+            <Header/>
+            <main className='max-w-screen-xl mx-auto xWrapper'>{children}</main>
             <Footer/>
           </ThemeProvider>
         </body>
