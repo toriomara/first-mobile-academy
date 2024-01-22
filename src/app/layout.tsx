@@ -1,22 +1,22 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { ClerkProvider } from '@clerk/nextjs'
-import { Header } from './components/Header'
-import { ThemeProvider } from '@/components/theme-provider'
-import { Footer } from './components/Footer'
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
+import { Header } from "./components/Header";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Footer } from "./components/Footer";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'The First Mobile Academy',
-  description: 'Lesson ',
-}
+  title: "The First Mobile Academy",
+  description: "Lesson ",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <ClerkProvider>
@@ -28,12 +28,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-              <Header/>
-              <main className='container flex'>{children}</main>
-            <Footer/>
+            <Header />
+            <main className="container flex xWrapper">{children}</main>
+            <Footer />
           </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
-  )
+  );
 }

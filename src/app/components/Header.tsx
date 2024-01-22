@@ -1,31 +1,29 @@
 import { ModeToggle } from '@/components/mode-toggle'
 import { Button } from '@/components/ui/button'
 import { EnterIcon, ExitIcon, PersonIcon } from '@radix-ui/react-icons'
-// import { RxExit } from "react-icons/rx";
 import Image from 'next/image'
 import Link from 'next/link'
 import { auth, UserButton } from '@clerk/nextjs'
 
 export const Header = () => {
-    const {userId} = auth()
-    console.log(userId);
+  const {userId} = auth()
+  console.log(userId)
+
   return (
-    <header className='container border-b border-grey py-6'>
-      <nav className=''>
+    <header className='border-b border-grey py-3 xs:py-4 mb-8'>
+      <nav className='container xWrapper'>
         <div className='flex items-center justify-between'>
-          {/* <div className='flex'> */}
-            <Link href='/'>
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className="dark:invert"
-                width={100}
-                height={24}
-                priority
-              />
-            </Link>
-          {/* </div> */}
-          <div className='flex gap-2'>
+          <Link href='/'>
+            <Image
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              className="dark:invert"
+              width={100}
+              height={24}
+              priority
+            />
+          </Link>
+          <div className='flex items-center gap-2'>
             <ModeToggle/>
             {userId ? (
               <>
@@ -55,4 +53,3 @@ export const Header = () => {
     </header>
   )
 }
-

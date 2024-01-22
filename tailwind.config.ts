@@ -1,4 +1,6 @@
-import type { Config } from "tailwindcss"
+/** @type {import('tailwindcss').Config} */
+import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config = {
   darkMode: ["class"],
@@ -52,6 +54,10 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      screens: {
+        ...defaultTheme.screens,
+        'xs': '480px',
       },
       borderRadius: {
         lg: "var(--radius)",
