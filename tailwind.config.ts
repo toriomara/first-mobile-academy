@@ -20,6 +20,10 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        ...defaultTheme.screens,
+        'xs': '480px',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

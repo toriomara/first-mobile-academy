@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { CodeEditor } from "../components/CodeEditor";
 
-export default function LessonPage() {
+export default async function LessonPage() {
+
   return (
     <div className="flex flex-col w-full">
       <div className="flex space-x-4">
@@ -15,3 +16,8 @@ export default function LessonPage() {
     </div>
   );
 }
+
+
+
+
+

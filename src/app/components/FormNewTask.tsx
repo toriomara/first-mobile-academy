@@ -64,7 +64,6 @@ export const FormNewTask = () => {
       });
       const data = await res.json();
       return data;
-      reset(task)
     } catch (error) {
       throw error;
     }
